@@ -1,0 +1,3 @@
+C:/Users/kripe/CLionProjects/HSE_learningC/cmake-build-debug/CMakeFiles/HSE_learningC.dir
+C:/Users/kripe/CLionProjects/HSE_learningC/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kripe/CLionProjects/HSE_learningC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
