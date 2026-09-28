@@ -2,6 +2,7 @@
 // Created by kripe on 25.09.2026.
 //
 #include "Vector.h"
+#include "deque.h"
 
 Vector *newVector(long long size) {
 	Vector* vec = (Vector*)malloc(sizeof(Vector));
@@ -67,4 +68,23 @@ void sort(long long* data, long long size) {
 	}
 	for (int i = 0; i < size; i++) data[i] = buf[i];
 	free(buf);
+}
+
+void radixSort(unsigned long long* data, long long size) {
+	if (data == NULL || size == 0) return;
+	const char BYTES_COUNT = 2;
+	Deque sortArr[(1 << (8 * BYTES_COUNT)) - 1];
+	for (unsigned long long i = 0; i < (1 << 8 * BYTES_COUNT) - 1; i++) sortArr[i] = emptyDeque();
+	for (unsigned long long i = 0; i < sizeof(data[0]) / BYTES_COUNT; i++) {
+		for (unsigned long long j = 0; j < size; j++) {
+			unsigned long long ind = data[j] >> i * (8 * BYTES_COUNT) & (1 << 8 * BYTES_COUNT) - 1;
+			pushBackDeque(&sortArr[ind], data[j]);
+		}
+		for (unsigned long long j = 0, k = 0; j < (1 << (8 * BYTES_COUNT)) - 1; j++) {
+			while (sortArr[j].size != 0) {
+				data[k] = popFrontDeque(&sortArr[j]);
+				k++;
+			}
+		}
+	}
 }

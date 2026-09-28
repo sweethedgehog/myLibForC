@@ -34,6 +34,8 @@ long long popFrontDeque(Deque* deque) {
 	deque->head = nodeDeque->next;
 	free(nodeDeque);
 	deque->size--;
+	deque->head->prev = NULL;
+	if (deque->size == 0) deque->tail = NULL;
 	return data;
 }
 
@@ -49,8 +51,10 @@ long long popBackDeque(Deque* deque) {
 	long long data = deque->tail->data;
 	NodeDeque* nodeDeque = deque->tail;
 	deque->tail = nodeDeque->prev;
+	deque->tail->next = NULL;
 	free(nodeDeque);
 	deque->size--;
+	if (deque->size == 0) deque->head = NULL;
 	return data;
 }
 
@@ -74,4 +78,12 @@ void printNodeDeque(NodeDeque* nodeDeque) {
 void printDeque(Deque* deque) {
 	printNodeDeque(deque->head);
 	printf("\n");
+}
+
+Deque emptyDeque() {
+	Deque deque;
+	deque.head = NULL;
+	deque.tail = NULL;
+	deque.size = 0;
+	return deque;
 }

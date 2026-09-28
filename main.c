@@ -27,11 +27,12 @@ int main(void) {
 	// printf("smallest: %lld\t biggest: %lld\n", lower(set->root)->data, upper(set->root)->data);
 
 	// Deque* queue = newDeque();
-	// forn(i, 500) {
+	// readIn(n);
+	// forn(i, n) {
 	// 	readIn(x);
 	// 	pushBackDeque(queue, x);
 	// }
-	// var n = queue->size;
+	// n = queue->size;
 	// forn(i, n) printf("%lld ", popBackDeque(queue));
 	return 0;
 }

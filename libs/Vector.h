@@ -31,3 +31,5 @@ long long getVector(Vector *vec, long long index); // function for getting eleme
 void setVector(Vector *vec, long long index, long long value); // function for setting element to vector (you also ca write vector->data[i] = value)
 
 void sort(long long* data, long long size); // function which sorting vector by mergesort
+
+void radixSort(unsigned long long* data, long long size); // function which sorting vector by radix sort (only for N digits)

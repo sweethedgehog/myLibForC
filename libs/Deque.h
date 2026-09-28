@@ -41,3 +41,5 @@ void deleteDeque(Deque* deque); // destructor for deque
 void printNodeDeque(NodeDeque* nodeDeque); // recursive function for printing node data
 
 void printDeque(Deque* deque); // print all deque data
+
+Deque emptyDeque(); // create empty deque
