@@ -1,38 +1,36 @@
-#include "libs/allKirills.h"
+// #include "libs/allKirills.h"
+#include <stdio.h>
+
+#include "arrays.h"
 
 int main(void) {
-	// readIn(n);
-	// Vector* vec = newVector(n);
-	// forn(i, vec->size) scanf("%lld", &vec->data[i]);
-	// sort(vec->data, vec->size);
-	// forn(i, vec->size) printf("%lld ", getVector(vec, i));
-	// forn(i, vec->size - 1) if (getVector(vec, i) > getVector(vec, i + 1)) return -1;
-	// removeVector(vec, 0);
-	// printf("\n");
-	// forn(i, vec->size) printf("%lld ", getVector(vec, i));
+	double arrA[ARRAY_CAPACITY], arrB[ARRAY_CAPACITY];
+	short sizeA = readArr(arrA);
+	if (!sizeA) return 1;
+	short sizeB = getSize('B');
+	if (!sizeB) return 1;
+	double a, x, h;
+	if (!readParams(&a, &x, &h)) return 1;
 
-	// readIn(n);
-	// Set* set = newSet();
-	// forn(i, n) {
-	// 	readIn(x);
-	// 	insert(set, x);
-	// }
-	// printSet(set);
-	// scanf("%lld", &n);
-	// removeSet(set, n);
-	// printSet(set);
-	// scanf("%lld", &n);
-	// if (findSet(set, n)) printf("yes\n");
-	// else printf("no\n");
-	// printf("smallest: %lld\t biggest: %lld\n", lower(set->root)->data, upper(set->root)->data);
+	makeB(arrB, sizeB, a, x, h);
+	printf("Array A:\n");
+	printArr(arrA, sizeA);
+	printf("Array B:\n");
+	printArr(arrB, sizeB);
 
-	// Deque* queue = newDeque();
-	// readIn(n);
-	// forn(i, n) {
-	// 	readIn(x);
-	// 	pushBackDeque(queue, x);
-	// }
-	// n = queue->size;
-	// forn(i, n) printf("%lld ", popBackDeque(queue));
+	removeAllNegAfterMin(arrB, &sizeB);
+	printf("Array B after deleting:\n");
+	printArr(arrB, sizeB);
+
+	if (insertMinAtZero(arrA, &sizeA)) return 1;
+	printf("Array A after inserting:\n");
+	printArr(arrA, sizeA);
+
+	replaceOddToZero(arrA, sizeA);
+	printf("Array A after replacing:\n");
+	printArr(arrA, sizeA);
+
+	printf("that is all!\nhave a good day! :)");
+
 	return 0;
 }

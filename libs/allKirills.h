@@ -8,6 +8,7 @@
 #endif //ALL_H
 
 #include <stdio.h>
+#include <time.h>
 #include "set.h"
 #include "vector.h"
 #include "Deque.h"

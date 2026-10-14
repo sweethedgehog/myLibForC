@@ -12,4 +12,6 @@ add_executable(HSE_learningC main.c
         libs/Set.c
         libs/allKirills.h
         libs/Deque.c
+        arrays.h
+        arrays.c
 )

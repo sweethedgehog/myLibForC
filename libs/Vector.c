@@ -10,7 +10,7 @@ Vector *newVector(long long size) {
 
 	vec->size = size;
 	vec->capacity = size + 1;
-	vec->data = (long long*)malloc(vec->capacity * sizeof(long long));
+	vec->data = (varV*)malloc(vec->capacity * sizeof(varV));
 	if (vec->data == NULL) return NULL;
 	return vec;
 }
@@ -26,30 +26,30 @@ void removeVector(Vector *vec, long long index) {
 }
 
 void resizeVector(Vector* vec) {
-	long long* old = vec->data;
+	varV* old = vec->data;
 	vec->capacity *= 2;
-	long long* newData = (long long*)malloc(vec->capacity * sizeof(long long));;
+	varV* newData = (varV*)malloc(vec->capacity * sizeof(varV));;
 	vec->data = newData;
 	for (int i = 0; i < vec->size; i++) vec->data[i] = old[i];
 	free(old);
 }
 
-void pushBackVector(Vector *vec, long long value) {
+void pushBackVector(Vector *vec, varV value) {
 	if (vec->capacity == vec->size) resizeVector(vec);
 	vec->data[vec->size] = value;
 	vec->size++;
 }
 
-long long getVector(Vector *vec, long long index) { return vec->data[index]; }
+varV getVector(Vector *vec, long long index) { return vec->data[index]; }
 
-void setVector(Vector *vec, long long index, long long value) { vec->data[index] = value; }
+void setVector(Vector *vec, long long index, varV value) { vec->data[index] = value; }
 
-void sort(long long* data, long long size) {
+void sort(varV* data, long long size) {
 	if (size <= 1) return;
 	long long mid = size / 2;
 	sort(data, mid);
 	sort(data + mid, size - mid);
-	long long *buf = (long long*)malloc(size * sizeof(long long));
+	varV *buf = (varV*)malloc(size * sizeof(varV));
 	for (int i = 0, j = mid, k = 0; i + j < size + mid; k++) {
 		if (i < mid) {
 			if (j >= size || data[i] < data[j]) {

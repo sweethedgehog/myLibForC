@@ -73,6 +73,12 @@ build CMakeFiles/HSE_learningC.dir/libs/Set.c.obj: C_COMPILER__HSE_learningC_uns
   OBJECT_DIR = CMakeFiles\HSE_learningC.dir
   OBJECT_FILE_DIR = CMakeFiles\HSE_learningC.dir\libs
 
+build CMakeFiles/HSE_learningC.dir/arrays.c.obj: C_COMPILER__HSE_learningC_unscanned_Debug C$:/Users/kripe/CLionProjects/HSE_learningC/arrays.c || cmake_object_order_depends_target_HSE_learningC
+  DEP_FILE = CMakeFiles\HSE_learningC.dir\arrays.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\HSE_learningC.dir
+  OBJECT_FILE_DIR = CMakeFiles\HSE_learningC.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HSE_learningC
@@ -81,7 +87,7 @@ build CMakeFiles/HSE_learningC.dir/libs/Set.c.obj: C_COMPILER__HSE_learningC_uns
 #############################################
 # Link the executable HSE_learningC.exe
 
-build HSE_learningC.exe: C_EXECUTABLE_LINKER__HSE_learningC_Debug CMakeFiles/HSE_learningC.dir/main.c.obj CMakeFiles/HSE_learningC.dir/libs/Deque.c.obj CMakeFiles/HSE_learningC.dir/libs/Vector.c.obj CMakeFiles/HSE_learningC.dir/libs/Set.c.obj
+build HSE_learningC.exe: C_EXECUTABLE_LINKER__HSE_learningC_Debug CMakeFiles/HSE_learningC.dir/main.c.obj CMakeFiles/HSE_learningC.dir/libs/Deque.c.obj CMakeFiles/HSE_learningC.dir/libs/Vector.c.obj CMakeFiles/HSE_learningC.dir/libs/Set.c.obj CMakeFiles/HSE_learningC.dir/arrays.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\HSE_learningC.dir
